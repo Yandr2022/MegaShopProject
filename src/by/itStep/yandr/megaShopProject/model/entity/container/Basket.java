@@ -3,8 +3,6 @@ package by.itStep.yandr.megaShopProject.model.entity.container;
 import by.itStep.yandr.megaShopProject.model.entity.Milk;
 import by.itStep.yandr.megaShopProject.model.entity.Orange;
 
-import java.util.Arrays;
-
 public class Basket {
     private Orange[] oranges;
     private Milk[] milks;
@@ -22,6 +20,24 @@ public class Basket {
         if (milks != null) {
             this.milks = milks;
         }
+    }
+
+    public int getOrangesCount() {
+        return oranges.length;
+    }
+
+    public int getMilksCount() {
+        return milks.length;
+    }
+
+    //!!!work-flow
+    public Orange getOrange(int index) {
+        return oranges[index];
+    }
+
+    //!!!work-flow
+    public Milk getMilk(int index) {
+        return milks[index];
     }
 
     public void add(Orange orange) {
@@ -49,7 +65,7 @@ public class Basket {
         temp[i] = milk;
         milks = temp;
     }
-
+//!!!
     public void removeOrange(int index) {
         Orange[] temp = new Orange[oranges.length - 1];
         for (int i = 0, j = 0; i < oranges.length; i++) {
@@ -60,7 +76,7 @@ public class Basket {
         oranges = temp;
     }
 
-
+///!!!
     public void removeMilk(int index) {
         Milk[] temp = new Milk[oranges.length - 1];
         for (int i = 0, j = 0; i < milks.length; i++) {
