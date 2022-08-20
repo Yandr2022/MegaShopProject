@@ -15,6 +15,9 @@ public class ShopAssistance {
         for (int i = 0; i < basket.getMilksCount(); i++) {
             total += basket.getMilk(i).getMoney();
         }
+        for (int i = 0; i < basket.getBreadsCount(); i++) {
+            total += basket.getBread(i).getPrice();
+        }
         return total;
     }
 }
