@@ -1,17 +1,19 @@
 package by.itStep.yandr.megaShopProject.model.entity;
 
-public class Orange {
+import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
+
+public class Orange extends Product {
     private int diameter;
     private int vitaminC;
-    private double cost;
 
-    public Orange(){
+    public Orange() {
 
     }
-    public Orange(int diameter, int vitaminC, double cost) {
+
+    public Orange(int diameter, int vitaminC, double price) {
+        super(price);
         this.diameter = diameter;
         this.vitaminC = vitaminC;
-        this.cost = cost;
     }
 
     public int getDiameter() {
@@ -30,20 +32,11 @@ public class Orange {
         this.vitaminC = vitaminC;
     }
 
-    public double getCost() {
-        return cost;
-    }
-
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
     @Override
     public String toString() {
         return "Orange {" +
                 "diameter = " + diameter +
                 ", vitaminC = " + vitaminC +
-                ", cost = " + cost +
-                "}";
+                ", " + super.toString() + "}";
     }
 }

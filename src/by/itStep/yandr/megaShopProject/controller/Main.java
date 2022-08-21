@@ -13,7 +13,7 @@ public class Main {
         Milk milk2 = new Milk(1000,3.5,2.5);
         Milk milk3 = new Milk(1000,3.5,2.5);
         Milk milk4 = new Milk(1000,3.5,2.5);
-         
+
 
 
         Basket basket = new Basket();

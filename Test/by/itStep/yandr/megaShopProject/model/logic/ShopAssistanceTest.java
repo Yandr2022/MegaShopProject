@@ -1,7 +1,9 @@
 package by.itStep.yandr.megaShopProject.model.logic;
 
+import by.itStep.yandr.megaShopProject.model.entity.Bread;
 import by.itStep.yandr.megaShopProject.model.entity.Milk;
 import by.itStep.yandr.megaShopProject.model.entity.Orange;
+import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
 import by.itStep.yandr.megaShopProject.model.entity.container.Basket;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,6 +16,8 @@ public class ShopAssistanceTest {
         Milk milk2 = new Milk(1000,3.5,2.5);
         Milk milk3 = new Milk(1000,3.5,2.5);
         Milk milk4 = new Milk(1000,3.5,2.5);
+        Bread bread = new Bread("White","Best",2.5);
+
 
         Basket basket = new Basket();
         basket.add(milk1);
@@ -21,7 +25,8 @@ public class ShopAssistanceTest {
         basket.add(milk3);
         basket.add(milk4);
         basket.add(orange);
-         double expected = 14.5;
+        basket.add(bread);
+         double expected = 17;
          double actual = ShopAssistance.calculateTotalPrice(basket);
         assertEquals(expected,actual,0.0);
     }
