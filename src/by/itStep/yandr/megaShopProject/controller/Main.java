@@ -6,6 +6,8 @@ import by.itStep.yandr.megaShopProject.model.entity.Orange;
 import by.itStep.yandr.megaShopProject.model.entity.container.Basket;
 import by.itStep.yandr.megaShopProject.model.logic.BasketSorter;
 
+import by.itStep.yandr.megaShopProject.model.logic.sortStrategy.SortByPriceDescending;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -29,7 +31,7 @@ public class Main {
         basket.add(orange3);
         basket.add(bread);
         basket.add(bread1);
-        BasketSorter.sortByPriceDescending(basket);
+        BasketSorter.sort(basket, new SortByPriceDescending());
 
         System.out.println(basket);
 
