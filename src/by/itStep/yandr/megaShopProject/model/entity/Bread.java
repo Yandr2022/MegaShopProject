@@ -35,7 +35,7 @@ public class Bread extends Product {
     public String toString() {
         return "Bread { " +
                 "color= " + color +
-                ", flour= " + flour +
+                ", flour= " + flour +", "+
                 super.toString() + "}";
     }
 }
