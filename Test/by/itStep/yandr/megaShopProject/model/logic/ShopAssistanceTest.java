@@ -3,8 +3,7 @@ package by.itStep.yandr.megaShopProject.model.logic;
 import by.itStep.yandr.megaShopProject.model.entity.Bread;
 import by.itStep.yandr.megaShopProject.model.entity.Milk;
 import by.itStep.yandr.megaShopProject.model.entity.Orange;
-import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
-import by.itStep.yandr.megaShopProject.model.entity.container.Basket;
+import by.itStep.yandr.megaShopProject.model.entity.container.DynamicBasket;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,15 +18,15 @@ public class ShopAssistanceTest {
         Bread bread = new Bread("White","Best",2.5);
 
 
-        Basket basket = new Basket();
-        basket.add(milk1);
-        basket.add(milk2);
-        basket.add(milk3);
-        basket.add(milk4);
-        basket.add(orange);
-        basket.add(bread);
+        DynamicBasket dynamicBasket = new DynamicBasket();
+        dynamicBasket.add(milk1);
+        dynamicBasket.add(milk2);
+        dynamicBasket.add(milk3);
+        dynamicBasket.add(milk4);
+        dynamicBasket.add(orange);
+        dynamicBasket.add(bread);
          double expected = 17;
-         double actual = ShopAssistance.calculateTotalPrice(basket);
+         double actual = ShopAssistance.calculateTotalPrice(dynamicBasket);
         assertEquals(expected,actual,0.0);
     }
 }
