@@ -4,6 +4,7 @@ import by.itStep.yandr.megaShopProject.model.entity.Bread;
 import by.itStep.yandr.megaShopProject.model.entity.Milk;
 import by.itStep.yandr.megaShopProject.model.entity.Orange;
 import by.itStep.yandr.megaShopProject.model.entity.container.DynamicBasket;
+import by.itStep.yandr.megaShopProject.model.entity.container.ListBasket;
 import by.itStep.yandr.megaShopProject.model.logic.BasketSorter;
 
 import by.itStep.yandr.megaShopProject.model.logic.sortStrategy.SortByPriceDescending;
@@ -21,7 +22,7 @@ public class Main {
         Bread bread =new Bread("White","High",3.4);
         Bread bread1 =new Bread("Black","Middle",2);
 
-        DynamicBasket dynamicBasket = new DynamicBasket();
+        ListBasket dynamicBasket = new ListBasket();
         dynamicBasket.add(milk1);
         dynamicBasket.add(milk2);
         dynamicBasket.add(milk3);
@@ -31,7 +32,7 @@ public class Main {
         dynamicBasket.add(orange3);
         dynamicBasket.add(bread);
         dynamicBasket.add(bread1);
-        BasketSorter.sort(dynamicBasket, new SortByPriceDescending());
+      //  BasketSorter.sort(dynamicBasket, new SortByPriceDescending());
 
         System.out.println(dynamicBasket);
 
