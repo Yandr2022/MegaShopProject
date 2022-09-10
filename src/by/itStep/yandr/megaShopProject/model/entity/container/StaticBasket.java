@@ -46,18 +46,41 @@ public class StaticBasket {
 
     }
 
-//    //!!!
-//    public void remove(int index) {
-//
-//
-//
-//        for (int i = 0, j = 0; i < products.length; i++) {
-//            if (i != index) {
-//                temp[j++] = products[i];
-//            }
-//        }
-//
-//        products = temp;
-//    }
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    //!!!
+    public void remove(int index) {
+        if (isEmpty() || index == 0 && index >= size) {
+            return;
+        }
+        if (index == size - 1) {
+            array[index] = null;
+        } else {
+            for (int i = index; i < size(); i++) {
+                array[i] = array[i + 1];
+            }
+        }
+
+        size--;
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        if (isEmpty()) {
+            builder.append("Basket is empty.");
+        } else {
+            builder.append("Basket:");
+            for (int i = 0; i < size; i++) {
+                builder.append("\n").append(array[i]);
+            }
+        }
+
+        return builder.toString();
+    }
 }
 
