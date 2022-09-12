@@ -5,8 +5,11 @@ import by.itStep.yandr.megaShopProject.model.entity.Milk;
 import by.itStep.yandr.megaShopProject.model.entity.Orange;
 import by.itStep.yandr.megaShopProject.model.entity.container.DynamicBasket;
 import by.itStep.yandr.megaShopProject.model.entity.container.ListBasket;
+import by.itStep.yandr.megaShopProject.model.entity.container.StaticBasket;
 import by.itStep.yandr.megaShopProject.model.logic.BasketSorter;
 
+import by.itStep.yandr.megaShopProject.model.logic.ShopAssistance;
+import by.itStep.yandr.megaShopProject.model.logic.sortStrategy.SortByPriceAscending;
 import by.itStep.yandr.megaShopProject.model.logic.sortStrategy.SortByPriceDescending;
 
 
@@ -22,20 +25,26 @@ public class Main {
         Bread bread =new Bread("White","High",3.4);
         Bread bread1 =new Bread("Black","Middle",2);
 
-        ListBasket dynamicBasket = new ListBasket();
-        dynamicBasket.add(milk1);
-        dynamicBasket.add(milk2);
-        dynamicBasket.add(milk3);
-        dynamicBasket.add(milk4);
-        dynamicBasket.add(orange1);
-        dynamicBasket.add(orange2);
-        dynamicBasket.add(orange3);
-        dynamicBasket.add(bread);
-        dynamicBasket.add(bread1);
-      //  BasketSorter.sort(dynamicBasket, new SortByPriceDescending());
+        DynamicBasket basket = new DynamicBasket();
+        basket.add(milk1);
+        basket.add(milk2);
+        basket.add(milk3);
+        basket.add(milk4);
+        basket.add(orange1);
+//        dynamicBasket.add(orange2);
+//        dynamicBasket.add(orange3);
+//        dynamicBasket.add(bread);
+//        dynamicBasket.add(bread1);
 
-        System.out.println(dynamicBasket);
+        for (int i = 0; i< basket.size();i++){
+            System.out.println(basket.get(i));
+        }
 
+//       BasketSorter.sort(dynamicBasket, new SortByPriceAscending());
+
+//        System.out.println(dynamicBasket);
+        double total = ShopAssistance.calculateTotalPrice(basket);
+        System.out.println(total);
 
     }
 

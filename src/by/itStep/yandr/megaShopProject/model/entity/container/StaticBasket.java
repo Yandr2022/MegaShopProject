@@ -3,7 +3,7 @@ package by.itStep.yandr.megaShopProject.model.entity.container;
 import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
 
 
-public class StaticBasket {
+public class StaticBasket implements Basket {
     public static final int DEFAULT_SIZE = 10;
     private Product[] array;
     private int size;
@@ -23,7 +23,7 @@ public class StaticBasket {
         size = array.length;
     }
 
-    public Product getProduct(int index) {
+    public Product get(int index) {
         return array[index];
     }
 
@@ -58,7 +58,7 @@ public class StaticBasket {
         if (index == size - 1) {
             array[index] = null;
         } else {
-            for (int i = index; i < size(); i++) {
+            for (int i = index; i < size; i++) {
                 array[i] = array[i + 1];
             }
         }

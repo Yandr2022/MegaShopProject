@@ -2,7 +2,7 @@ package by.itStep.yandr.megaShopProject.model.entity.container;
 
 import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
 
-public class ListBasket {
+public class ListBasket implements  Basket {
     private Node first;
     private int size;
 
@@ -13,6 +13,18 @@ public class ListBasket {
 
     public int size() {
         return size;
+    }
+
+    @Override
+    public Product get(int index) {
+        if (isEmpty() || index < 0 || index >= size) {
+            return null;
+        }
+        Node temp = first;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp.product;
     }
 
     public boolean isEmpty() {

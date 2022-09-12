@@ -2,7 +2,7 @@ package by.itStep.yandr.megaShopProject.model.entity.container;
 
 import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
 
-public class DynamicBasket {
+public class DynamicBasket implements Basket {
     private Product[] products;
 
     public DynamicBasket() {
@@ -17,12 +17,12 @@ public class DynamicBasket {
         }
     }
 
-    public int getProductsCount() {
+    public int size() {
         return products.length;
     }
 
     //!!!work-flow
-    public Product getProduct(int index) {
+    public Product get(int index) {
         return products[index];
     }
 
