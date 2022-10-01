@@ -1,8 +1,11 @@
 package by.itStep.yandr.megaShopProject.model.entity.container;
 
 import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.Iterable;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.ListBasketIterator;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.MyIterator;
 
-public class ListBasket implements  Basket {
+public class ListBasket implements  Basket, Iterable {
     private Node first;
     private int size;
 
@@ -61,6 +64,11 @@ public class ListBasket implements  Basket {
         }
 
         return builder.toString();
+    }
+
+    @Override
+    public MyIterator getIterator() {
+        return new ListBasketIterator(this);
     }
 
     private class Node {

@@ -1,9 +1,12 @@
 package by.itStep.yandr.megaShopProject.model.entity.container;
 
 import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.FixedBasketIterator;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.Iterable;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.MyIterator;
 
 
-public class FixedBasket implements Basket {
+public class FixedBasket implements Basket, Iterable {
     public static final int DEFAULT_SIZE = 10;
     private Product[] array;
     private int size;
@@ -81,6 +84,11 @@ public class FixedBasket implements Basket {
         }
 
         return builder.toString();
+    }
+
+    @Override
+    public MyIterator getIterator() {
+        return new FixedBasketIterator(this);
     }
 }
 
