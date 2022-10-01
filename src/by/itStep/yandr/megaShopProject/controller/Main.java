@@ -3,14 +3,15 @@ package by.itStep.yandr.megaShopProject.controller;
 import by.itStep.yandr.megaShopProject.model.entity.Bread;
 import by.itStep.yandr.megaShopProject.model.entity.Milk;
 import by.itStep.yandr.megaShopProject.model.entity.Orange;
+import by.itStep.yandr.megaShopProject.model.entity.abstracts.Product;
 import by.itStep.yandr.megaShopProject.model.entity.container.DynamicBasket;
-import by.itStep.yandr.megaShopProject.model.entity.container.ListBasket;
-import by.itStep.yandr.megaShopProject.model.entity.container.StaticBasket;
-import by.itStep.yandr.megaShopProject.model.logic.BasketSorter;
+import by.itStep.yandr.megaShopProject.model.entity.container.FixedBasket;
 
+import by.itStep.yandr.megaShopProject.model.entity.iterator.ArrayIterator;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.DynamicBasketIterator;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.FixedBasketIterator;
+import by.itStep.yandr.megaShopProject.model.entity.iterator.MyIterator;
 import by.itStep.yandr.megaShopProject.model.logic.ShopAssistance;
-import by.itStep.yandr.megaShopProject.model.logic.sortStrategy.SortByPriceAscending;
-import by.itStep.yandr.megaShopProject.model.logic.sortStrategy.SortByPriceDescending;
 
 
 public class Main {
@@ -31,20 +32,27 @@ public class Main {
         basket.add(milk3);
         basket.add(milk4);
         basket.add(orange1);
+        Product[] products = {milk1,orange1,milk4};
+
+       MyIterator iterator = new ArrayIterator(products);
+
+        double total = ShopAssistance.calculateTotalPrice(iterator);
+        System.out.println(total);
+
+
 //        dynamicBasket.add(orange2);
 //        dynamicBasket.add(orange3);
 //        dynamicBasket.add(bread);
 //        dynamicBasket.add(bread1);
-
-        for (int i = 0; i< basket.size();i++){
-            System.out.println(basket.get(i));
-        }
+//
+//        for (int i = 0; i< basket.size();i++){
+//            System.out.println(basket.get(i));
+//        }
 
 //       BasketSorter.sort(dynamicBasket, new SortByPriceAscending());
 
-//        System.out.println(dynamicBasket);
-        double total = ShopAssistance.calculateTotalPrice(basket);
-        System.out.println(total);
+////        System.out.println(dynamicBasket);
+
 
     }
 
