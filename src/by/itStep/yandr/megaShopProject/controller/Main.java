@@ -32,11 +32,11 @@ public class Main {
         basket.add(milk3);
         basket.add(milk4);
         basket.add(orange1);
-        Product[] products = {milk1,orange1,milk4};
 
-       MyIterator iterator = new ArrayIterator(products);
 
-        double total = ShopAssistance.calculateTotalPrice(iterator);
+
+
+        double total = ShopAssistance.calculateTotalPrice(basket);
         System.out.println(total);
 
 
