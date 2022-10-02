@@ -9,30 +9,39 @@ import by.itStep.yandr.megaShopProject.model.entity.comparator.SortByValueDesc;
 import by.itStep.yandr.megaShopProject.model.entity.container.DynamicBasket;
 import by.itStep.yandr.megaShopProject.model.entity.container.FixedBasket;
 
+import by.itStep.yandr.megaShopProject.model.entity.container.ListBasket;
 import by.itStep.yandr.megaShopProject.model.entity.iterator.ArrayIterator;
 import by.itStep.yandr.megaShopProject.model.entity.iterator.DynamicBasketIterator;
 import by.itStep.yandr.megaShopProject.model.entity.iterator.FixedBasketIterator;
 import by.itStep.yandr.megaShopProject.model.entity.iterator.MyIterator;
 import by.itStep.yandr.megaShopProject.model.logic.ShopAssistance;
+import by.itStep.yandr.megaShopProject.util.charStream.ProductStream;
 
 import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) {
-        Queue<Integer> queue= new ArrayDeque<>();
-        Deque<Integer> deque= (Deque<Integer>)queue;
-        deque.push(22);
-        deque.push(13);
-        deque.push(4);
-        deque.push(5);
-        deque.push(6);
-        while (!queue.isEmpty()){
-            System.out.println(deque.pop());
-        }
+
+//        Queue<Integer> queue= new ArrayDeque<>();
+//        Deque<Integer> deque= (Deque<Integer>)queue;
+//        deque.push(22);
+//        deque.push(13);
+//        deque.push(4);
+//        deque.push(5);
+//        deque.push(6);
+//        while (!queue.isEmpty()){
+//            System.out.println(deque.pop());
+//        }
 //        Orange orange1 = new Orange(100,2000,2.5);
 //        Orange orange2 = new Orange(200,4000,5);
 //        Orange orange3 = new Orange(300,6000,7.5);
+//        Orange []oranges = {orange1,orange2,orange3};
+//        ProductStream.writeOranges(oranges,"D:/oranges.txt");
+   List<Orange>oranges =  ProductStream.readOranges("D:/oranges.txt");
+        for (Orange orange : oranges) {
+            System.out.println(orange);
+        }
 //        Milk milk1 = new Milk(1000,3.5,2.5);
 //        Milk milk2 = new Milk(1500,3.5,3);
 //        Milk milk3 = new Milk(2000,3.5,4.2);
@@ -54,7 +63,6 @@ public class Main {
 //        basket.add(milk3);
 //        basket.add(milk4);
 //        basket.add(orange1);
-
 
 
 //
